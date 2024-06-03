@@ -8,6 +8,7 @@ import { UnAuthDropDown } from '../../features/components/Navbar/UnAuthDropDown/
 import { NavSettings } from '../../features/components/Navbar/NavSettings/NavSettings';
 import { NavLinks } from '../../features/components/Navbar/NavLinks/NavLinks';
 export const Navbar = () => {
+
     const authData = useStore((state) => state.authData);
     const userDropDown = useStore((state) => state.userDropDown);
     const setUserDropDown = useStore((state) => state.setUserDropDown);
@@ -34,13 +35,13 @@ export const Navbar = () => {
         <div className='w-full z-50 shadow-md'>
             <div className='flex items-center justify-between p-5 bg-white dark:bg-gray-800 relative'>
                 <LogoComponent />
-                <div className={`${styles.links} flex flex-col ${navbarOpened ? "right-0" : "right-[-100%]"} `}>
+                <div className={`${styles.links} bg-white dark:bg-slate-700  ${navbarOpened ? "right-0" : "right-[-100%] md:right-0"} `}>
                     <NavLinks />
                 </div>
                 <div className="flex items-center gap-3">
                     <div className='relative UserIcon'>
                         <span onClick={handleUserTabs} className='cursor-pointer dark:text-white'><CgProfile size={20} /></span>
-                        <div className={`${userDropDown ? "block" : "hidden"} ${styles.userDropDown} `}>
+                        <div className={`${userDropDown ? "block" : "hidden"} ${styles.userDropDown} dark:bg-slate-500 dark:border-slate-400 `}>
                             {authData ?
                                 <AuthUserDropDown />
                                 :
