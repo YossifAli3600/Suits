@@ -1,0 +1,16 @@
+.links{
+	@apply md:right-0 transition-all duration-1000 md:duration-0 md:flex-row items-center pt-20 md:pt-0 rounded-lg border-[#00000074] gap-4 text-lg absolute md:relative h-[100vh] w-[70%] md:w-fit md:h-auto bg-white md:bg-transparent z-40 top-0
+}
+.links a {
+	color: #000000;
+	transition: 0.5s;
+}
+.links a:hover {
+	color: #ddb762;
+}
+.links :global(.active) {
+	color: #ddb762 !important;
+}
+.userDropDown {
+	@apply rounded-lg absolute top-[30px] left-[-80px] border p-5 flex flex-col z-50 bg-white dark:bg-slate-500 dark:border-slate-400 shadow-2xl w-[200px];
+}

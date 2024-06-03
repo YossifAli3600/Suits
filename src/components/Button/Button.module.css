@@ -1,0 +1,53 @@
+.button{
+  border: 0;
+  padding: 10px 30px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 7px;
+  transition: .3s;
+  white-space: nowrap;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button a{
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+}
+
+.button__secondary{
+  border: 1px solid var(--primary);
+  background-color: white;
+  color: black;
+}
+
+.button__dark,
+.button__dark a{
+  background-color: black;
+  color: white;
+}
+
+.button__red,
+.button__red a{
+  background-color: red;
+  color: white;
+}
+.button__success,
+.button__success a{
+  background-color: #22d060;
+  color: white;
+}
+
+.button__secondary__dark
+.button__secondary__dark a{
+  background-color: white !important;
+  border-color: black;
+  color: black;
+}
+
+.button:disabled{
+  cursor:not-allowed;
+}

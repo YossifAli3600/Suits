@@ -1,0 +1,23 @@
+.customShadow {
+	box-shadow: -19px 27px 151px -93px rgba(0, 0, 0, 0.647);
+	transition: 1s;
+	transform: scale(1.1);
+}
+.PersonCard :global(.socialIcons) {
+	left: -100%;
+	top: 0;
+	opacity: 0;
+	transition: 1s;
+}
+.PersonCard:hover :global(.socialIcons) {
+	left: 0;
+	opacity: 1;
+}
+.PersonCard :global(.socialIcons) svg {
+	transition: 1s;
+}
+.PersonCard :global(.socialIcons) svg:hover {
+	cursor: pointer;
+	color: blue;
+	transform: scale(1.1);
+}

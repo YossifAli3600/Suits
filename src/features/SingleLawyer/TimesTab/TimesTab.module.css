@@ -1,0 +1,8 @@
+.TimesTab :global(.swiper-button-next),
+.TimesTab :global(.swiper-button-prev) {
+	margin: 0 -12px;
+}
+.TimesTab :global(.swiper-button-next)::after,
+.TimesTab :global(.swiper-button-prev)::after {
+	font-size: 25px;
+}

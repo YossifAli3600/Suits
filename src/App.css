@@ -1,0 +1,19 @@
+body {
+	font-family: "Amiri", serif;
+	font-weight: 900;
+}
+.custom_container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 60px auto;
+}
+@media (max-width: 1280px) {
+	.custom_container {
+		max-width: 900px;
+	}
+}
+@media (max-width: 960px) {
+	.custom_container {
+		max-width: 95%;
+	}
+}
