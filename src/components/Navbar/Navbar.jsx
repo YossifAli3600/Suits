@@ -35,7 +35,7 @@ export const Navbar = () => {
         <div className='w-full z-50 shadow-md'>
             <div className='flex items-center justify-between p-5 bg-white dark:bg-gray-800 relative'>
                 <LogoComponent />
-                <div className={`${styles.links} bg-white dark:bg-slate-700  ${navbarOpened ? "right-0" : "right-[-100%] md:right-0"} `}>
+                <div className={`${styles.links} bg-white dark:bg-slate-700 md:bg-white md:dark:bg-transparent  ${navbarOpened ? "right-0" : "right-[-100%] md:right-0"} `}>
                     <NavLinks />
                 </div>
                 <div className="flex items-center gap-3">
