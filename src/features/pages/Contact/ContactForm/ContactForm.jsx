@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { TextInput } from "../../../../components/Inputs/TextInput/TextInput";
 import TextboxInput from "../../../../components/Inputs/TextboxInput";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation } from "react-query";
 import useAxios from "../../../../hooks/useAxios";
 import { contactSchema } from "../../../../schemas/contactSchema";
 
@@ -30,15 +30,16 @@ export default function ContactForm() {
   }
 
   return (
-    <div className={`${styles.contact__form}`}>
-      <h4 className="fw-bold text--primary text-center mb-3 capitalize">
+    <div className={`p-5 border rounded-2xl dark:bg-slate-500`}>
+      <h3 className="fw-bold text-2xl text--primary text-center mb-4 capitalize">
         <FormattedMessage id="contact" />
-      </h4>
+      </h3>
       <Formik
         innerRef={form}
         initialValues={{
           name: "",
           email: "",
+          phone: "",
           subject: "",
           message: "",
         }}

@@ -1,0 +1,44 @@
+.profile__pic-cont {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.profile__pic {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: auto;
+}
+
+.edit__btn{
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.edit-img__inp{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.pic__info{
+  color: rgba(0 0 0 / .7);
+}

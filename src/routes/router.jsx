@@ -10,6 +10,9 @@ import { Topics } from "../pages/Topics/Topics";
 import { SingleTopic } from "../pages/SingleTopic/SingleTopic";
 import Contact from "../pages/Contact/Contact";
 import { Login } from "../pages/Login/Login";
+import { Register } from "../pages/Register/Register";
+import { LawyerRegister } from "../pages/LawyerRegister/LawyerRegister";
+import { EditProfile } from "../pages/EditProfile/EditProfile";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +30,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/register",
-                // element: <Register />
+                element: <Register />
+            },
+            {
+                path: "/register-as-lawyer",
+                element: <LawyerRegister />
             },
             {
                 path: "/about",
@@ -56,6 +63,10 @@ const router = createBrowserRouter([
             {
                 path: "/contact-us",
                 element: <Contact />
+            },
+            {
+                path: "/edit-profile",
+                element: <EditProfile />
             },
         ]
     }

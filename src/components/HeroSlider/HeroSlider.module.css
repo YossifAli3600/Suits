@@ -1,4 +1,4 @@
-.text {
+.slide :global(.subHeader) {
 	font-family: "Amiri", serif;
 	position: absolute;
 	top: 50%;
@@ -6,13 +6,7 @@
 	opacity: 0;
 	transition: 3s;
 }
-.aciveSliderText {
-	left: 50%;
-	top: 55%;
-	transform: translate(-50%, -50%);
-	opacity: 1;
-}
-.header {
+.slide :global(.header) {
 	font-family: "Lalezar", system-ui;
 	font-weight: 400;
 	position: absolute;
@@ -21,7 +15,13 @@
 	opacity: 0;
 	transition: 3s;
 }
-.activeHeader {
+.aciveSlide :global(.subHeader) {
+	left: 50%;
+	top: 57%;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+}
+.aciveSlide :global(.header) {
 	left: 50%;
 	top: 42%;
 	transform: translate(-50%, -50%);

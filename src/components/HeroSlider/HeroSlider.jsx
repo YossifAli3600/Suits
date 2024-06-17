@@ -32,29 +32,38 @@ export const HeroSlider = () => {
 
 
     return (
-        <div className={`${styles.hero}`}>
-            <Swiper
-                slidesPerView={1}
-                loop={true}
-            >
-                {slides.map((slide) => (
-                    <SwiperSlide
-                        key={slide.id}
-                        className='relative w-full h-[500px] bg-no-repeat bg-cover bg-center'
-                        style={{
-                            backgroundImage: `url(${slide.image})`
-                        }}
-                    >
-                        {({ isActive }) => (
-                            <div className={`${styles.slide} ${isActive ? styles.aciveSlide : ""}`}>
-                                <div className='bg-[#00000087] absolute w-full h-full'></div>
-                                <h3 className={`${styles.header} ${isActive ? styles.activeHeader : ""} text-orange-500 text-center text-4xl`}>{slide.header}</h3>
-                                <p className={`${styles.text} ${isActive ? styles.aciveSliderText : ""} text-white text-center w-[50%] leading-8 text-2xl`}>{slide.content}</p>
-                            </div>
-                        )}
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </div >
+        <>
+            <div className={`${styles.hero} hidden md:block`}>
+                <Swiper
+                    slidesPerView={1}
+                    loop={true}
+                >
+                    {slides.map((slide) => (
+                        <SwiperSlide
+                            key={slide.id}
+                            className='relative w-full h-[500px] bg-no-repeat bg-cover bg-center'
+                            style={{
+                                backgroundImage: `url(${slide.image})`
+                            }}
+                        >
+                            {({ isActive }) => (
+                                <div className={`${isActive ? styles.aciveSlide : ""} ${styles.slide}`}>
+                                    <div className='bg-[#00000087] absolute w-full h-full'></div>
+                                    <h3 className={`header text-orange-500 text-center text-xl xl:text-3xl`}>{slide.header}</h3>
+                                    <p className={`subHeader text-white text-center w-[50%] leading-8 text-md xl:text-xl`}>{slide.content}</p>
+                                </div>
+                            )}
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div >
+            <div className='h-[500px] bg-no-repeat bg-cover bg-center relative flex items-center justify-center flex-col md:hidden' style={{
+                backgroundImage: `url(${slides[0].image})`
+            }}>
+                <div className='bg-[#00000087] absolute w-full h-full z-0'></div>
+                <h3 className={`text-orange-500 text-center text-xl z-20`}>{slides[0].header}</h3>
+                <p className={`text-white text-center w-[80%] leading-8 text-sm z-20`}>{slides[0].content}</p>
+            </div>
+        </>
     )
 }

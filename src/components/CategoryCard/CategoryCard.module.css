@@ -16,8 +16,8 @@
 	background-color: white;
 	box-shadow: 41.67px 52.08px 145.83px 0px #f9dad5cc;
 	transition: 1s;
-	width: 100px;
-	height: 100px;
+	width: 150px;
+	height: 150px;
 	transition: 1s;
 }
 .CategoryCard:hover .innerCircle {

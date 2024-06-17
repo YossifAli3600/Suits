@@ -12,4 +12,7 @@ export const contactSchema = yup.object().shape({
         .typeError(<FormattedMessage id="phoneMustBeValid" />)
         .required(<FormattedMessage id="phoneReq" />)
         .min(0, <FormattedMessage id="minimumZero" />),
+    message: yup
+        .string()
+        .required(<FormattedMessage id="messageReq" />),
 })

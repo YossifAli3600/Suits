@@ -7,10 +7,10 @@ export default function useFormErr() {
   function handleMutationErr(err) {
     if (err.response.status == 422) {
       setFormErr(err.response.data.data);
-      toast.error(err.response.data.msg);
+      toast.error(err.response.data.message);
     } else {
-      setFormErr({ general: err.response.data.msg });
-      toast.error(err.response.data.msg);
+      setFormErr({ general: err.response.data.message });
+      toast.error(err.response.data.message);
     }
   }
 

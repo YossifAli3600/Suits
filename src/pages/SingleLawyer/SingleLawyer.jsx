@@ -4,33 +4,30 @@ import { FormattedMessage } from 'react-intl';
 import Loading from '../../components/Loading/Loading';
 import { BookingInformation } from '../../features/SingleLawyer/BookingInformation/BookingInformation';
 import { PersonalInformation } from '../../features/SingleLawyer/PersonalInformation/PersonalInformation';
+import { useSingleLawyerData } from '../../queries/queries';
+import { Page } from '../../components/Page/Page';
 
 export const SingleLawyer = () => {
     let { lawyerId } = useParams();
-    // const { data: LawyerData, isLoading } = useLawyerData(lawyerId);
-    let isLoading = false;
-    let LawyerData = {
-        name: "محمد ماجد ماجد التهامي",
-        about: "محامي متخصص لقضايا البرمجة",
-        photo: "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
-    };
+    const { data: LawyerData, isLoading } = useSingleLawyerData(lawyerId);
+    console.log(LawyerData)
     let content;
     if (isLoading) {
         content = <Loading />;
     }
     else if (!LawyerData) {
-        content = <h2 className="fw-bolder text-center"><FormattedMessage id='noCategories' /></h2>;
+        content = <h2 className="fw-bolder text-center"><FormattedMessage id='noData' /></h2>;
     } else {
         content = (
             <div className='grid grid-cols-12 gap-8 m-auto'>
                 <div className='col-span-12 md:col-span-7'><PersonalInformation LawyerData={LawyerData} /></div>
-                <div className='col-span-12 md:col-span-5'><BookingInformation /></div>
+                <div className='col-span-12 md:col-span-5'><BookingInformation lawyer={LawyerData} /></div>
             </div>
         );
     }
     return (
-        <div className='custom_container'>
-            {content}
-        </div>
+        <Page style={"p-5"}>
+           {content}
+        </Page>
     );
 };

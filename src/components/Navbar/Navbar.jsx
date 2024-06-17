@@ -41,7 +41,7 @@ export const Navbar = () => {
                 <div className="flex items-center gap-3">
                     <div className='relative UserIcon'>
                         <span onClick={handleUserTabs} className='cursor-pointer dark:text-white'><CgProfile size={20} /></span>
-                        <div className={`${userDropDown ? "block" : "hidden"} ${styles.userDropDown} dark:bg-slate-500 dark:border-slate-400 `}>
+                        <div className={`${userDropDown ? "block" : "hidden"} ${styles.userDropDown} bg-white dark:bg-slate-500 dark:border-slate-400 `}>
                             {authData ?
                                 <AuthUserDropDown />
                                 :

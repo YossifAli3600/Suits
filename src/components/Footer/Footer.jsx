@@ -5,10 +5,10 @@ import { FormattedMessage } from 'react-intl'
 export const Footer = () => {
     return (
         <div className='bg-[#219EBC]'>
-            <div className='flex justify-between custom_container my-0 py-11'>
+            <div className='flex flex-col md:flex-row gap-5 md:gap-0 justify-between custom_container my-0 py-11'>
                 <div className='text-4xl'>
                     <LogoComponent />
-                    <p className='text-xl max-w-[60%] mt-2'>
+                    <p className='text-xl md:max-w-[60%] mt-2'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Quisquam, quaerat.
                     </p>

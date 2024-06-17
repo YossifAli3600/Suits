@@ -9,6 +9,7 @@ const store = (set) => ({
 	navBarOpened: false,
 	setNavBarOpened: (value) => set(() => ({ navBarOpened: value })),
 	userDropDown: false,
+	filters: {},
 	setUserDropDown: (value) => set(() => ({ userDropDown: value })),
 	editLang: (value) => {
 		console.log("first");
@@ -21,6 +22,11 @@ const store = (set) => ({
 	setAuthData: (data) => {
 		set(() => ({ authData: data }));
 		Cookies.set("auth_data", JSON.stringify(data));
+	},
+	editFilters: (filterName, value) => {
+		set((store) => ({
+			filters: { ...store.filters, [filterName]: value },
+		}));
 	},
 });
 export const useStore = create(store);

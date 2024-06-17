@@ -6,6 +6,7 @@ import { TbMoodSad } from "react-icons/tb";
 export const RateStars = ({ rate }) => {
     const fullStars = Math.floor(rate);
     const halfStar = rate - fullStars;
+    const lang = localStorage.getItem("lang") || "ltr";
 
     const starElements = [];
 
@@ -17,6 +18,7 @@ export const RateStars = ({ rate }) => {
         starElements.push(
             <span className='text-[#fec109]' key={`half-star`}>
                 <FaStarHalf />
+                {lang == 'ltr' ? <FaStarHalf /> : <FaStarHalf style={{ transform: 'scaleX(-1)' }} />}
             </span>
         );
     }

@@ -45,10 +45,10 @@ export const Testimonials = () => {
                     1200: {
                         slidesPerView: 3,
                     },
-                    768: {
+                    700: {
                         slidesPerView: 2,
                     },
-                    456: {
+                    200: {
                         slidesPerView: 1,
                     },
                 }}>

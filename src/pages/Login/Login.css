@@ -2,32 +2,10 @@
 	min-height: 70vh;
 	width: 60%;
 }
-.form-control:focus {
-	box-shadow: none;
-}
-.input-group {
-	border-bottom: 2px solid red;
-}
 @media screen and (max-width: 768px) {
-	.Loginillustrator {
-		height: 300px;
-		width: 80%;
-		margin: 0 auto;
-	}
 	.Loginillustrator img {
 		z-index: -1;
 		top: 60px;
-	}
-	.formDiv {
-		border-radius: 15px;
-		box-shadow: none !important;
-	}
-	.formDiv {
-		padding: 40px 20px;
-		width: 100%;
-	}
-	.formDiv form {
-		width: 100% !important;
 	}
 	.LoginPage {
 		width: 85%;

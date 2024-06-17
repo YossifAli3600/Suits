@@ -30,7 +30,7 @@ export default function Button({
         isLoading={isLoading}
         disabled={disabled || isLoading}
       >
-        {children}
+        {!isLoading ? children : ""}
       </ButtonComponent>
     );
   }

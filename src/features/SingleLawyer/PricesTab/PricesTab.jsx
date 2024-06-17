@@ -2,9 +2,8 @@ import React, { Fragment } from 'react'
 import { useParams } from 'react-router';
 import { PriceCard } from '../PriceCard/PriceCard'
 
-export const PricesTab = () => {
+export const PricesTab = ({ lawyer }) => {
     let { lawyerId } = useParams();
-    // const { data: LawyerData, isLoading } = useLawyerData(lawyerId);
     let LawyerData = {
         name: "محمد ماجد ماجد التهامي",
         about: "محامي متخصص لقضايا البرمجة",
