@@ -5,8 +5,27 @@ import { LawyerCard } from '../../components/LawyerCard/LawyerCard'
 import { Slider } from '../../components/Slider/Slider'
 import { SwiperSlide } from 'swiper/react';
 import { FormattedMessage } from 'react-intl'
+import { useBlogsData, useTopLawyersData } from '../../queries/queries'
+import Loading from '../../components/Loading/Loading'
+import { TopLawyers } from '../../features/pages/Topics/TopLawyers'
 
 export const Topics = () => {
+    const { data: blogs, isLoading } = useBlogsData();
+
+    let content;
+    if (isLoading) {
+        content = <Loading />
+    } else if (!blogs || !blogs.length) {
+        content = <FormattedMessage id='noBlogs' />
+    } else {
+        content =
+            <div className='flex flex-col gap-5 px-5 mt-20 mb-16'>
+                {blogs.map((blog) => {
+                    return <BlogCard blog={blog} key={`blog_${blog.id}`} />
+                })}
+            </div>
+    }
+
     let lawyers = [
         {
             id: 1,
@@ -105,13 +124,12 @@ export const Topics = () => {
             longDescription: "Daniel White is a passionate civil rights attorney dedicated to advocating for justice, equality, and the protection of civil liberties. With a strong commitment to social justice, Daniel represents individuals and groups in cases involving discrimination, police misconduct, voting rights, and constitutional violations. He is known for his tireless advocacy and unwavering dedication to fighting for the rights of marginalized communities and individuals facing injustice."
         }
     ];
-
     return (
         <Page>
             <div className='grid grid-cols-12 gap-1 mt-16'>
                 <div className='col-span-3 px-4 '>
                     <div className='w-full sticky top-11 h-[100vh]'>
-                        <h3 className='text-2xl'><FormattedMessage id='sponser' /></h3>
+                        <h3 className='text-2xl dark:text-white'><FormattedMessage id='latestLawyers' /></h3>
                         <Slider
                             style={"h-[70%]"}
                             slidesPerView={1}
@@ -124,29 +142,11 @@ export const Topics = () => {
                         </Slider>
                     </div>
                 </div>
-                <div className='col-span-6'>
-                    <div className='flex flex-col gap-5 px-5'>
-                        <BlogCard />
-                        <BlogCard />
-                        <BlogCard />
-                        <BlogCard />
-                        <BlogCard />
-                    </div>
+                <div className="col-span-6">
+                    {content}
                 </div>
                 <div className='col-span-3 px-4'>
-                    <div className='w-full sticky top-11 h-[100vh]'>
-                        <h3 className='text-2xl'><FormattedMessage id='latestLawyers' /></h3>
-                        <Slider
-                            style={"h-[70%]"}
-                            slidesPerView={1}
-                        >
-                            {lawyers.map((lawyer) => {
-                                return (
-                                    <SwiperSlide key={lawyer.id}><LawyerCard className={"bg-[#8ECAE1] h-full"} key={lawyer.id} lawyer={lawyer} /></SwiperSlide>
-                                );
-                            })}
-                        </Slider>
-                    </div>
+                    <TopLawyers />
                 </div>
             </div>
 

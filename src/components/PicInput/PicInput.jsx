@@ -17,7 +17,7 @@ export default function PicInput({
   return (
     <div className="mb-3 text-center w-full">
       <div className={`${styles["profile__pic-cont"]} mb-8 w-full`}>
-        <div className={`text-center ${styles.pic__info} my-3`}>{info}</div>
+        <div className={`text-center ${styles.pic__info} my-3 dark:text-white`}>{info}</div>
         <div className={`${styles.profile__pic} rounded-2xl`}>
           <img
             className={`w-full h-full ${contain ? "object-contain" : "object-cover"
@@ -41,7 +41,7 @@ export default function PicInput({
               onChange={(e) => setFieldValue(name, e.target.files[0])}
             />
             <label
-              className={styles.edit__btn}
+              className={`${styles.edit__btn} dark:text-black` }
               htmlFor={`edit-profile-img-inp-${name}`}
             >
               <MdEdit />

@@ -13,6 +13,9 @@ import { Login } from "../pages/Login/Login";
 import { Register } from "../pages/Register/Register";
 import { LawyerRegister } from "../pages/LawyerRegister/LawyerRegister";
 import { EditProfile } from "../pages/EditProfile/EditProfile";
+import { Booking } from "../features/pages/Booking/Booking";
+import React from 'react';
+import { Profile } from "../pages/Profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -65,8 +68,16 @@ const router = createBrowserRouter([
                 element: <Contact />
             },
             {
+                path: "/profile",
+                element: <Profile />
+            },
+            {
                 path: "/edit-profile",
                 element: <EditProfile />
+            },
+            {
+                path: "/booking",
+                element: <Booking />
             },
         ]
     }

@@ -25,6 +25,7 @@ export const CustomersRating = ({ reviews }) => {
     }
     return (
         <div className='text-[#A3A4A5] dark:text-white'>
+            <h3 className='text-2xl dark:text-white'>Reviews</h3>
             {content}
         </div>
     )

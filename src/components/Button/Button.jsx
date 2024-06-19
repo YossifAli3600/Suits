@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Button.module.css";
 import Loading from "../Loading/Loading";
+import React from 'react';
 
 export default function Button({
   variant,

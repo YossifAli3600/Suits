@@ -14,7 +14,6 @@ export const Navbar = () => {
     const setUserDropDown = useStore((state) => state.setUserDropDown);
     const navbarOpened = useStore((state) => state.navBarOpened);
 
-
     const handleUserTabs = () => {
         setUserDropDown(!userDropDown)
     }

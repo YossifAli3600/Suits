@@ -3,7 +3,6 @@ import { useStore } from "../zustand/store";
 
 const API_LINK = "https://suits.mrehabazmy.com/api"; //Live
 const lang = localStorage.getItem("lang") || "ltr";
-console.log(lang)
 
 export default function useAxios() {
     const authData = useStore((state) => state.authData);

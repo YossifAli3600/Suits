@@ -1,14 +1,16 @@
 import React from 'react'
-import styles from './BlogCard.module.css'
+import styles from './BigBlogCard.module.css'
 import { Link } from 'react-router-dom'
-export const BlogCard = ({ blog, sm, className }) => {
+export const BigBlogCard = ({ blog, sm, className }) => {
     return (
         <div className={`${styles.BlogCard} ${sm ? "max-w-sm" : ""} ${className} overflow-hidden bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700`}>
             <div className='h-[250px] overflow-hidden'>
-                <img className="rounded-t-lg duration-1000 w-full h-full object-cover" src={blog.image} alt="" />
+                <a href="#">
+                    <img className="rounded-t-lg duration-1000 w-full h-full object-cover" src={blog.image} alt="" />
+                </a>
             </div>
             <div className="p-5">
-                <Link to={`/topic/${blog.id}`}>
+                <Link to={"/topic/1"}>
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{blog.title}</h5>
                 </Link>
                 <p dangerouslySetInnerHTML={{ __html: blog.description.slice(16, 150) }} className="mb-3 font-normal text-gray-700 dark:text-gray-400"></p>

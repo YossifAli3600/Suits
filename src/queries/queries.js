@@ -15,6 +15,7 @@ export const useSingleCategoryData = (id) => {
 		filterName: "categories",
 	});
 };
+
 export const useSingleLawyerData = (id) => {
 	return useGenericQuery({
 		keys: [`lawyer_${id}`],
@@ -22,10 +23,27 @@ export const useSingleLawyerData = (id) => {
 		filterName: "lawyer",
 	});
 };
+
 export const useUserData = () => {
 	return useGenericQuery({
 		keys: [`user`],
 		apiEndpoint: `profile/user`,
 		filterName: "user",
+	});
+};
+
+export const useBlogsData = () => {
+	return useGenericQuery({
+		keys: [`blogs`],
+		apiEndpoint: `blogs`,
+		filterName: "blogs",
+	});
+};
+
+export const useTopLawyersData = () => {
+	return useGenericQuery({
+		keys: [`toplawyers`],
+		apiEndpoint: `lawyers/top-rated`,
+		filterName: "toplawyers",
 	});
 };

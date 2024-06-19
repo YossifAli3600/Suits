@@ -2,6 +2,7 @@ import styles from "./Features.module.css";
 import FeaturesItem from "../FeaturesItem/FeaturesItem";
 import { FormattedMessage } from "react-intl";
 import { SectionLayout } from "../../../../components/SectionLayout/SectionLayout";
+import React from 'react';
 
 export default function Features() {
 

@@ -9,8 +9,8 @@ import { Page } from '../../components/Page/Page';
 
 export const SingleLawyer = () => {
     let { lawyerId } = useParams();
+
     const { data: LawyerData, isLoading } = useSingleLawyerData(lawyerId);
-    console.log(LawyerData)
     let content;
     if (isLoading) {
         content = <Loading />;
@@ -27,7 +27,7 @@ export const SingleLawyer = () => {
     }
     return (
         <Page style={"p-5"}>
-           {content}
+            {content}
         </Page>
     );
 };

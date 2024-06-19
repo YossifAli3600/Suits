@@ -3,6 +3,7 @@ import styles from "./Inputs.module.css";
 import { Field } from "formik";
 import { RequiredIndicator } from "../RequiredIndicator/RequiredIndicator";
 import { Error } from "../Error/Error";
+import React from 'react';
 
 export default function SelectField({
   options,
@@ -25,7 +26,7 @@ export default function SelectField({
         } ${className ? className : ""}`}
     >
       <div className="flex gap-2">
-        <label htmlFor={id} className="modal__label">
+        <label htmlFor={id} className="modal__label dark:text-white">
           {title} {row ? ":" : ""}
         </label>{" "}
         {required ? <RequiredIndicator /> : ""}
@@ -36,7 +37,7 @@ export default function SelectField({
           id={name}
           component={SelectInp}
           options={options}
-          className={`${styles.select} mb-1`}
+          className={`${styles.select} select mb-1 rounded-2`}
           placeholder={placeholder}
           isMulti={isMulti}
           isClearable={isClearable}
@@ -67,6 +68,8 @@ const SelectInp = ({
       additionalFunc();
     }
   }
+  let theme = localStorage.getItem("theme") ?? "light"
+
   return (
     <Select
       options={options}
@@ -76,13 +79,24 @@ const SelectInp = ({
           ? field.value
           : options.find((option) => option.value == field.value)
       }
-      className={`${className}`}
+      className={`${className} rounded-2 option`}
       onChange={handleSelectChange}
       onBlur={field.onBlur}
       placeholder={placeholder}
       isMulti={isMulti}
       isClearable={isClearable}
       styles={{
+        singleValue: (provided, state) => ({
+          ...provided,
+          color: theme == "dark" ? "#fff" : "#000",
+        }),
+        option: (provided, state) => ({
+          ...provided,
+          backgroundColor: state.isSelected ? theme == "dark" ? "#64748B" : "#33AAEE" : theme == "dark" ? "#64748B" : "#fff",
+          '&:hover': {
+            backgroundColor: theme == "dark" ? "#59687c" : "#33AAEE",
+          },
+        }),
         valueContainer: (base) => ({
           ...base,
           overflowX: "auto",

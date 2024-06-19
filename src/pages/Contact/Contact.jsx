@@ -1,6 +1,7 @@
 import styles from "./Contact.module.css";
 import ContactForm from "../../features/pages/Contact/ContactForm/ContactForm";
 import ConatctImg from '../../assets/images/contact-1.png'
+import React from 'react';
 export default function Contact() {
   return (
     <div className={styles.contact}>

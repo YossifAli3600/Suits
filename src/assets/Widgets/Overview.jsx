@@ -1,4 +1,5 @@
 import Options from "./Options";
+import React from 'react';
 
 const OverviewGeneralOptions = (props) => {
   const options = [

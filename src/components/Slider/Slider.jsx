@@ -1,4 +1,5 @@
 import { Swiper } from 'swiper/react'
+import React from 'react';
 
 export const Slider = ({ children, breakpoints, slidesPerView, style }) => {
     return (

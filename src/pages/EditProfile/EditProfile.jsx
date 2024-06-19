@@ -15,7 +15,6 @@ import { useMutation } from 'react-query';
 
 export const EditProfile = () => {
     const { data: user, isLoading } = useUserData();
-    console.log(user)
     const { handleMutationErr, formErr } = useFormErr();
     const form = useRef();
     const axios = useAxios();
@@ -99,7 +98,7 @@ export const EditProfile = () => {
                                 as="field"
                                 required
                                 value={values.phone}
-                                />
+                            />
                         </div>
 
                         <div className="flex items-center justify-center mb-3">

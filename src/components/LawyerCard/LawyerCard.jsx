@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
 export const LawyerCard = ({ lawyer, className }) => {
+    console.log(lawyer)
     return (
         <Link to={`/lawyer/${lawyer.id}`} className={`${styles.LawyerCard} ${className} px-5 flex justify-center items-center rounded-2xl shadow-lg border dark:bg-slate-400`}>
             <div>

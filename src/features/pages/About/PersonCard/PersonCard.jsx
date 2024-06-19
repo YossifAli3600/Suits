@@ -1,5 +1,6 @@
 import styles from './PersonCard.module.css'
 import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
+import React from 'react';
 
 export const PersonCard = ({ person, isActive }) => {
     return (

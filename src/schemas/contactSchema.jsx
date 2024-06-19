@@ -1,5 +1,6 @@
 import { FormattedMessage } from "react-intl";
 import * as yup from "yup";
+import React from 'react';
 
 export const contactSchema = yup.object().shape({
     name: yup.string().required(<FormattedMessage id="nameReq" />),

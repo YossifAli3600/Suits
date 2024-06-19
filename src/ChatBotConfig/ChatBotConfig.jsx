@@ -1,9 +1,13 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import CoBotAvatar from "./CoBotAvatar";
 import OverviewGeneralOptions from "../assets/Widgets/Overview";
-import { FormattedMessage } from "react-intl";
-let botName = "Suits Helper";
+import { FormattedMessage, useIntl } from "react-intl";
+import { Fragment } from "react";
+const lang = localStorage.getItem("lang") || "ltr";
+import React from 'react';
+let botName = lang == "ltr" ? "SuitBot" : " SuitBot"
 const config = {
+  headerText:"test",
   lang: "no",
   botName: botName,
   customStyles: {
@@ -19,12 +23,14 @@ const config = {
   },
   initialMessages: [
     createChatBotMessage(
-      `Hi, I'm ${botName} I'm Here to Help You to Choose Your Lawyer Category!`
+      <Fragment>
+        <FormattedMessage id="hiIam" />  {botName} <FormattedMessage id="iamHereToHelp" />
+      </Fragment>
     ),
     createChatBotMessage(
-      <FormattedMessage id="login" />,
+      <FormattedMessage id="typeYourCase" />,
       {
-        withAvatar: false,
+        withAvatar: true,
         delay: 2000,
       }
     )

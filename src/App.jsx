@@ -1,4 +1,6 @@
 import './App.css'
+import React from 'react';
+
 import { messages } from './translations/messages'
 import { IntlProvider } from 'react-intl';
 import { RouterProvider } from 'react-router-dom';

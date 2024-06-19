@@ -1,0 +1,15 @@
+
+.course__sidebar__item{
+  text-decoration: none;
+  color: black;
+  padding: 15px 20px;
+  border-bottom: var(--border);
+  display: block;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.course__sidebar__item--active{
+  background-color: black;
+  color: white;
+}

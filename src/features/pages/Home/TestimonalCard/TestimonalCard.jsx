@@ -2,6 +2,7 @@ import styles from './TestimonalCard.module.css'
 import { FaQuoteLeft } from "react-icons/fa";
 import { FaQuoteRight } from "react-icons/fa";
 import { RateStars } from '../../../../components/RateStars/RateStars';
+import React from 'react';
 
 export const TestimonalCard = ({ Testimonial, isActive }) => {
     return (

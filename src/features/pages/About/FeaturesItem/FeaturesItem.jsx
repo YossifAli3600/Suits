@@ -1,4 +1,5 @@
 import styles from "./FeaturesItem.module.css";
+import React from 'react';
 
 export default function FeaturesItem({ feature }) {
   return (
