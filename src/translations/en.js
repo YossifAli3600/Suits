@@ -149,5 +149,9 @@ export const english = {
 	reservationsHistory: "Reservations History",
 	meetingDate: "Meeting Date",
 	reqDate: "Booking Date",
-	paymentStatus : "Payment Status",
+	paymentStatus: "Payment Status",
+	meetingIntro:
+		"Contact the lawyer through an online meeting and your legal advice will be answered.",
+	chatIntro:
+		"Contact the lawyer through an Chat and your legal advice will be answered",
 };

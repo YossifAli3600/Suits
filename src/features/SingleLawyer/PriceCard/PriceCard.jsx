@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const PriceCard = ({ service }) => {
+export const PriceCard = ({ service, lawyer }) => {
     return (
         <div className='bg-[#F9F9F9] dark:bg-slate-500 dark:border-2 mb-3 rounded-lg p-2'>
             <div className='flex items-center'>
@@ -20,11 +20,11 @@ export const PriceCard = ({ service }) => {
                 </div>
                 <div>
                     <h6>سعر الخدمة</h6>
-                    <span className=' text-green-400  text-xl text-center '>{service.min_price}{" "}<span>ج.م
+                    <span className=' text-green-400  text-xl text-center '>{service.price}{" "}<span>ج.م
                     </span></span>
                 </div>
             </div>
-            <Link to={`reserve-service?id=${2}&lawyer=${2}`} className='bg-[#DDB762] w-full rounded-lg p-2 my-3 block text-center text-white'>طلب الخدمة</Link>
+            <Link to={`/Booking?service_id=${service.id}&lawyer=${lawyer.id}`} className='bg-[#DDB762] w-full rounded-lg p-2 my-3 block text-center text-white'>طلب الخدمة</Link>
         </div>
     )
 }

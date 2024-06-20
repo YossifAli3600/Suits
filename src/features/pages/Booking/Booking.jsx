@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
-import { useParams } from 'react-router';
+import React, { useEffect, useRef } from 'react'
+import { useLocation, useParams } from 'react-router';
 import { Page } from '../../../components/Page/Page';
 import SelectField from '../../../components/Inputs/SelectField';
 import { useTopLawyersData } from '../../../queries/queries';
@@ -12,8 +12,20 @@ import Button from '../../../components/Button/Button';
 import useAxios from '../../../hooks/useAxios';
 import { useMutation } from 'react-query';
 import { toast } from 'react-toastify';
+import { useState } from 'react';
 
 export const Booking = () => {
+    const location = useLocation();
+    const [serviceId, setServiceId] = useState("")
+    const [lawyerId, setLawyerId] = useState("")
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const service = searchParams.get('service_id');
+        const lawyer = searchParams.get('lawyer');
+        setServiceId(service)
+        setLawyerId(lawyer)
+    }, [location.search]);
+
     const intl = useIntl();
     const { data: lawyers } = useTopLawyersData();
     const { handleMutationErr, formErr } = useFormErr();
@@ -37,19 +49,19 @@ export const Booking = () => {
     });
 
     function contactApi(data) {
-        return axios.post("booking/add", data);
+        return axios.post("pay/paymob", data);
     }
 
     return (
         <Page style={"custom_container"}>
             <Formik
                 initialValues={{
-                    lawyer_id: '',
-                    service: '',
+                    lawyer_id: Number(lawyerId),
+                    service: Number(serviceId),
                     metting_date: '',
                 }}
+                enableReinitialize
                 onSubmit={(values) => handleContact.mutate(values)}
-
             >
                 {({ setFieldValue }) => (
                     <Form>
@@ -87,6 +99,6 @@ export const Booking = () => {
                     </Form>
                 )}
             </Formik>
-        </Page>
+        </Page >
     )
 }
