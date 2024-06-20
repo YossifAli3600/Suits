@@ -8,7 +8,6 @@ export const NavLinks = () => {
             <NavLink to={"/"} className='dark:text-white'><FormattedMessage id='homePage' /></NavLink>
             <NavLink to={"/topics"} className='dark:text-white'><FormattedMessage id='topics' /></NavLink>
             <NavLink to={"/about"} className='dark:text-white'><FormattedMessage id='about' /></NavLink>
-            <NavLink to={"/news"} className='dark:text-white'><FormattedMessage id='news' /></NavLink>
             <NavLink to={"/contact-us"} className='dark:text-white'><FormattedMessage id='contact' /></NavLink>
         </Fragment>
     )

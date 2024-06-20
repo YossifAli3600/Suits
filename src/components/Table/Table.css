@@ -1,0 +1,46 @@
+.table__cell {
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  white-space: nowrap;
+}
+
+.table__header {
+  background-color: #f4f4f4;
+  color: black;
+}
+
+.table--noborders .table__cell {
+  border: none;
+}
+
+.table__small-cell {
+  width: 1%;
+}
+
+.main-table__cont {
+  overflow-x: auto;
+}
+
+.table__row--canceled {
+  background-color: rgba(255, 155, 155, 0.828);
+}
+.table__row--canceled td {
+  border-color: rgba(255, 155, 155, 0.828);
+}
+.table__row--warning {
+  background-color: rgba(229, 255, 124, 0.828);
+}
+.table__row--warning td {
+  border-color: rgba(229, 255, 124, 0.828);
+}
+
+.table__cell--hidden {
+  padding: 0;
+  width: 0;
+  border: 0;
+}
+
+.table__cell--wrap {
+  min-width: 200px;
+  white-space: normal;
+}

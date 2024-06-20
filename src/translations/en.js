@@ -143,6 +143,11 @@ export const english = {
 	lawyer: "Lawyer",
 	onlineMeeting: "Online Meeting",
 	chat: "Chat",
-	service : "Service",
+	service: "Service",
 	date: "Date",
+	editProfile: "Edit Profile",
+	reservationsHistory: "Reservations History",
+	meetingDate: "Meeting Date",
+	reqDate: "Booking Date",
+	paymentStatus : "Payment Status",
 };

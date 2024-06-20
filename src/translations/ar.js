@@ -143,4 +143,9 @@ export const arabic = {
 	chat: "محادثة",
 	service: "الخدمة",
 	date: "الميعاد",
+	editProfile: "تعديل الملف الشخصي",
+	reservationsHistory: "تاريخ الحجوزات",
+	meetingDate: "ميعاد الاجتماع",
+	reqDate: "ميعاد الحجز",
+	paymentStatus: "حالة الدفع",
 };

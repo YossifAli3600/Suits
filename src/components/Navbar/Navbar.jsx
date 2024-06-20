@@ -13,7 +13,7 @@ export const Navbar = () => {
     const userDropDown = useStore((state) => state.userDropDown);
     const setUserDropDown = useStore((state) => state.setUserDropDown);
     const navbarOpened = useStore((state) => state.navBarOpened);
-
+    console.log(authData)
     const handleUserTabs = () => {
         setUserDropDown(!userDropDown)
     }

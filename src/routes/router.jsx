@@ -12,10 +12,11 @@ import Contact from "../pages/Contact/Contact";
 import { Login } from "../pages/Login/Login";
 import { Register } from "../pages/Register/Register";
 import { LawyerRegister } from "../pages/LawyerRegister/LawyerRegister";
-import { EditProfile } from "../pages/EditProfile/EditProfile";
 import { Booking } from "../features/pages/Booking/Booking";
 import React from 'react';
 import { Profile } from "../pages/Profile/Profile";
+import { EditProfile } from "../features/pages/Profile/EditProfile/EditProfile";
+import { ReservationsHistory } from "../features/pages/Profile/ReservationsHistory/ReservationsHistory";
 
 const router = createBrowserRouter([
     {
@@ -69,11 +70,17 @@ const router = createBrowserRouter([
             },
             {
                 path: "/profile",
-                element: <Profile />
-            },
-            {
-                path: "/edit-profile",
-                element: <EditProfile />
+                element: <Profile />,
+                children: [
+                    {
+                        path: "edit-profile",
+                        element: <EditProfile />
+                    },
+                    {
+                        path: "reservations-history",
+                        element: <ReservationsHistory />
+                    },
+                ],
             },
             {
                 path: "/booking",

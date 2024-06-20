@@ -16,7 +16,7 @@ export const SingleLawyer = () => {
         content = <Loading />;
     }
     else if (!LawyerData) {
-        content = <h2 className="fw-bolder text-center"><FormattedMessage id='noData' /></h2>;
+        content = <h2 className="fw-bolder text-center text-3xl my-10"><FormattedMessage id='noData' /></h2>;
     } else {
         content = (
             <div className='grid grid-cols-12 gap-8 m-auto'>

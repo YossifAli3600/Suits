@@ -6,7 +6,6 @@ import heroSlider2 from '../../assets/images/heroSlider2.jpg';
 import heroSlider3 from '../../assets/images/heroSlider3.jpg';
 import { FormattedMessage } from 'react-intl';
 
-
 export const HeroSlider = () => {
 
     const slides = [

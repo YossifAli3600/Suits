@@ -32,6 +32,14 @@ export const useUserData = () => {
 	});
 };
 
+export const useLawyerProfileData = () => {
+	return useGenericQuery({
+		keys: [`lawyerProfile`],
+		apiEndpoint: `lawyer/dashboard/profile`,
+		filterName: "lawyerProfile",
+	});
+};
+
 export const useBlogsData = () => {
 	return useGenericQuery({
 		keys: [`blogs`],
@@ -45,5 +53,21 @@ export const useTopLawyersData = () => {
 		keys: [`toplawyers`],
 		apiEndpoint: `lawyers/top-rated`,
 		filterName: "toplawyers",
+	});
+};
+
+export const useBookingData = () => {
+	return useGenericQuery({
+		keys: [`booking`],
+		apiEndpoint: `booking/all`,
+		filterName: "booking",
+	});
+};
+
+export const useSingleBlogData = (id) => {
+	return useGenericQuery({
+		keys: ["blog", id],
+		apiEndpoint: `blogs/${id}`,
+		filterName: "blog",
 	});
 };

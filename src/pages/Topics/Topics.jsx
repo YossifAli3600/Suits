@@ -124,19 +124,20 @@ export const Topics = () => {
             longDescription: "Daniel White is a passionate civil rights attorney dedicated to advocating for justice, equality, and the protection of civil liberties. With a strong commitment to social justice, Daniel represents individuals and groups in cases involving discrimination, police misconduct, voting rights, and constitutional violations. He is known for his tireless advocacy and unwavering dedication to fighting for the rights of marginalized communities and individuals facing injustice."
         }
     ];
+
     return (
         <Page>
-            <div className='grid grid-cols-12 gap-1 mt-16'>
+            <div className='grid grid-cols-1 md:grid-cols-12 gap-1 mt-16'>
                 <div className='col-span-3 px-4 '>
-                    <div className='w-full sticky top-11 h-[100vh]'>
+                    <div className='w-full md:sticky md:top-11  md:h-[100vh]'>
                         <h3 className='text-2xl dark:text-white'><FormattedMessage id='latestLawyers' /></h3>
                         <Slider
-                            style={"h-[70%]"}
+                            style={"md:h-[70%]"}
                             slidesPerView={1}
                         >
                             {lawyers.map((lawyer) => {
                                 return (
-                                    <SwiperSlide key={lawyer.id}><LawyerCard className={"bg-[#8ECAE1] h-full"} key={lawyer.id} lawyer={lawyer} /></SwiperSlide>
+                                    <SwiperSlide key={lawyer.id}><LawyerCard className={"bg-[#8ECAE1] h-full p-8 md:px-5"} key={lawyer.id} lawyer={lawyer} /></SwiperSlide>
                                 );
                             })}
                         </Slider>

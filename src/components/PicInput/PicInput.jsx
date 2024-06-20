@@ -41,7 +41,7 @@ export default function PicInput({
               onChange={(e) => setFieldValue(name, e.target.files[0])}
             />
             <label
-              className={`${styles.edit__btn} dark:text-black` }
+              className={`${styles.edit__btn} dark:text-black`}
               htmlFor={`edit-profile-img-inp-${name}`}
             >
               <MdEdit />

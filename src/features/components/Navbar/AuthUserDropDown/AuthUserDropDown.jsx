@@ -35,7 +35,7 @@ export const AuthUserDropDown = () => {
     return (
         <div className='flex flex-col items-center gap-3'>
             <span className='dark:text-white bg-slate-100 dark:bg-slate-700 rounded-lg w-full text-center'><FormattedMessage id='hello' />{" "} , {authData.name}</span>
-            <Link to={"/edit-profile"} className='dark:text-white bg-slate-100 dark:bg-slate-700 rounded-lg w-full text-center'><FormattedMessage id='profile' /></Link>
+            <Link to={"/profile/edit-profile"} className='dark:text-white bg-slate-100 dark:bg-slate-700 rounded-lg w-full text-center'><FormattedMessage id='profile' /></Link>
             <span onClick={() => handleLogout.mutate()} className='cursor-pointer dark:text-white bg-slate-100 dark:bg-slate-700 rounded-lg w-full text-center'><FormattedMessage id='logout' /></span>
         </div>
     )
