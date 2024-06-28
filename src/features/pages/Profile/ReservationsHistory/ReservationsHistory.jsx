@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Table, { Body, Header, HeaderCell } from '../../../../components/Table/Table'
 import { ReservationItem } from './ReservationItem'
 import { useBookingData } from '../../../../queries/queries';
 import Loading from '../../../../components/Loading/Loading';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { Page } from '../../../../components/Page/Page';
+import { ChatForm } from './ChatForm';
 
 export const ReservationsHistory = () => {
     const { data: bookingData, isLoading } = useBookingData();
+    const lawyers = bookingData?.map((item) => {
+        return {
+            id: item.lawyer_id,
+            name: item.lawyer_name
+        }
+    })
+    console.log(lawyers)
     console.log(bookingData)
     let content;
     if (isLoading) {
@@ -31,11 +39,11 @@ export const ReservationsHistory = () => {
                     })}
                 </Body>
             </Table>
-
     }
     return (
-        <Page>
+        <Page style={"dark:text-white"}>
             {content}
+            <ChatForm lawyers={lawyers} />
         </Page>
     )
 }

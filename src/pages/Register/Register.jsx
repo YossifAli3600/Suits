@@ -16,6 +16,7 @@ import { PiAddressBook } from "react-icons/pi";
 import CheckboxField from '../../components/Inputs/CheckboxField';
 import { registerSchema } from '../../schemas/registerSchema';
 import { Error } from '../../components/Error/Error';
+import Button from '../../components/Button/Button';
 
 export const Register = () => {
     const axios = useAxios();
@@ -154,23 +155,19 @@ export const Register = () => {
                                 </div>
 
                                 <div>
-                                    <CheckboxField
-                                        label={<FormattedMessage id="termsAndConditions" />}
-                                        id={`register-agree_terms`}
-                                        name="agree_terms"
-                                    />
-                                    <Error><ErrorMessage name="agree_terms" /></Error>
+                                    <div className="flex mb-2">
+                                        <CheckboxField
+                                            id={`register-agree_terms`}
+                                            name="agree_terms"
+                                        />
+                                        <Link to={"/terms-and-condtions"} className='text-sky-400'><FormattedMessage id="termsAndConditions" /></Link>
+                                    </div>
+                                    <Error className={"h-[20px]"}><ErrorMessage name="agree_terms" /></Error>
                                 </div>
 
                                 <div className='flex items-center justify-between my-3'>
-                                    <input
-                                        className={`bg-red-500 text-white cursor-pointer p-2 px-5 rounded-2xl ${loading ? 'hidden' : ''}`}
-                                        type="submit"
-                                        value={intl.formatMessage({ id: 'create' })}
-                                    />
-                                    {loading && (
-                                        <div><Loading sm /></div>
-                                    )}
+                                    <Button isLoading={handleRegister.isLoading} type={"submit"} bg={"bg-red-500 text-white"}><FormattedMessage id='create' /></Button>
+
                                     <Link to={"/login"}><FormattedMessage id='login' /></Link>
                                 </div>
 

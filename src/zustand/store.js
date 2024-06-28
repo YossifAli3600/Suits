@@ -6,10 +6,10 @@ const authData = Cookies.get("auth_data");
 const store = (set) => ({
 	authData: authData ? JSON.parse(authData) : "",
 	lang: lang,
+	filters: {},
 	navBarOpened: false,
 	setNavBarOpened: (value) => set(() => ({ navBarOpened: value })),
 	userDropDown: false,
-	filters: {},
 	setUserDropDown: (value) => set(() => ({ userDropDown: value })),
 	editLang: (value) => {
 		console.log("first");

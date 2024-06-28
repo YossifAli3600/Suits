@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-// import { useCategoriesData } from '../../queries/queries';
 import { FormattedMessage } from 'react-intl';
 import { CategoryCard } from '../../components/CategoryCard/CategoryCard';
 import Loading from '../../components/Loading/Loading';

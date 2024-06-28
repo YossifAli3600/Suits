@@ -159,9 +159,14 @@
 	background-color: #1f91e7;
 	border-radius: 50%;
 }
-.dark .select > div:nth-child(3){
-	@apply bg-slate-400 placeholder:text-white
+.dark .select > div:nth-child(3) {
+	@apply bg-slate-400 placeholder:text-white;
 }
-.dark #react-select-2-placeholder{
-	@apply dark:text-white
+.dark #react-select-2-placeholder {
+	@apply dark:text-white;
+}
+@media (min-width: 200px) and (max-width: 768px) {
+	body {
+		overflow-x: hidden;
+	}
 }

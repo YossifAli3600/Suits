@@ -4,6 +4,7 @@ import Loading from "../Loading/Loading";
 import React from 'react';
 
 export default function Button({
+  bg,
   variant,
   children,
   as,
@@ -24,6 +25,7 @@ export default function Button({
   } else {
     return (
       <ButtonComponent
+        bg={bg}
         variant={variant}
         className={className}
         onClick={onClick}
@@ -38,6 +40,7 @@ export default function Button({
 }
 
 function ButtonComponent({
+  bg,
   variant,
   children,
   className,
@@ -48,7 +51,7 @@ function ButtonComponent({
 }) {
   return (
     <button
-      className={` ${styles.button} ${styles["button__" + (variant || "primary")]
+      className={` ${bg ? bg : "bg-sky-200"} text-black ${styles.button} ${styles["button__" + (variant || "primary")]
         } ${className || ""} justify-center
     `}
       type={type || "button"}

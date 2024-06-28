@@ -20,7 +20,7 @@ export default function HomeCategories() {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 my-6'>
                 {categories.slice(0, 3).map((category) => {
                     return (
-                        <CategoryCard key={category.id} category={category} />
+                        <CategoryCard key={category.department_id} category={category} />
                     );
                 })}
 

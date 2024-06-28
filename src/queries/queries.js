@@ -55,6 +55,21 @@ export const useTopLawyersData = () => {
 		filterName: "toplawyers",
 	});
 };
+export const useAdsLawyersData = () => {
+	return useGenericQuery({
+		keys: [`adslawyers`],
+		apiEndpoint: `ads`,
+		filterName: "adslawyers",
+	});
+};
+
+export const useLawyersData = () => {
+	return useGenericQuery({
+		keys: [`lawyers`],
+		apiEndpoint: `lawyers`,
+		filterName: "lawyers",
+	});
+};
 
 export const useBookingData = () => {
 	return useGenericQuery({
@@ -69,5 +84,19 @@ export const useSingleBlogData = (id) => {
 		keys: ["blog", id],
 		apiEndpoint: `blogs/${id}`,
 		filterName: "blog",
+	});
+};
+export const useMessagesData = () => {
+	return useGenericQuery({
+		keys: ["messages"],
+		apiEndpoint: `get/replies`,
+		filterName: "messages",
+	});
+};
+export const useLawyerMessagesData = () => {
+	return useGenericQuery({
+		keys: ["lawyer_messages"],
+		apiEndpoint: `lawyer/dashboard/chats`,
+		filterName: "lawyer_messages",
 	});
 };

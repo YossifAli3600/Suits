@@ -4,6 +4,7 @@ import { Field } from "formik";
 import { RequiredIndicator } from "../RequiredIndicator/RequiredIndicator";
 import { Error } from "../Error/Error";
 import React from 'react';
+import { FormattedMessage, useIntl } from "react-intl";
 
 export default function SelectField({
   options,
@@ -20,6 +21,9 @@ export default function SelectField({
   isMulti,
   isClearable,
 }) {
+  console.log(placeholder)
+
+  const intl = useIntl();
   return (
     <div
       className={`flex w-full flex-col ${row ? "md:flex-row md:items-center gap-3" : "flex-col gap-2"
@@ -54,10 +58,11 @@ const SelectInp = ({
   options,
   className,
   additionalFunc,
-  placeholder = "Select",
+  placeholder,
   isMulti,
   isClearable,
 }) => {
+  console.log(placeholder)
   function handleSelectChange(value) {
     if (isMulti) {
       form.setFieldValue(field.name, value);

@@ -4,7 +4,7 @@
 	transition: 1s;
 }
 .CategoryCard:hover {
-	background: #8ecae6;
+	background: #6c80a5;
 	box-shadow: 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
 }
 .CategoryCard:hover h3,

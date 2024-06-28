@@ -6,7 +6,7 @@ export default function CheckboxField({ label, id, name, value, className }) {
     <div className={`flex gap-3 items-center ${className}`}>
       <Field
         id={id}
-        type="checkbox"
+        type="checkbox" 
         value={value}
         name={name}
       />

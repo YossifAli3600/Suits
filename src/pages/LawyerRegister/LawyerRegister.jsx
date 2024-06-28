@@ -21,6 +21,7 @@ import { useSelectOptions } from '../../hooks/useSelectOptions';
 import { useCategoriesData } from '../../queries/queries';
 import SelectField from '../../components/Inputs/SelectField';
 import { lawyerRegisterSchema } from '../../schemas/lawyerRegisterSchema';
+import Button from '../../components/Button/Button';
 
 export const LawyerRegister = () => {
     const axios = useAxios();
@@ -208,7 +209,7 @@ export const LawyerRegister = () => {
                                         type="select"
                                         error={formErr?.department_id || <ErrorMessage name="department_id" />}
                                     />
-
+                                    <p className='mt-2'><FormattedMessage id='upload' /> <Link to={"/lawyer-required-files"} className='text-blue-500'><FormattedMessage id='ReqFiles' /></Link></p>
                                     <input
                                         id='file'
                                         name='file'
@@ -216,7 +217,6 @@ export const LawyerRegister = () => {
                                         type='file'
                                         onChange={(e) => setFieldValue("file", e.target.files[0])}
                                     />
-
 
                                     <div className='my-2'>
 
@@ -231,14 +231,7 @@ export const LawyerRegister = () => {
                                     </div>
 
                                     <div className='flex items-center justify-between my-3'>
-                                        <input
-                                            className={`bg-red-500 text-white cursor-pointer p-2 px-5 rounded-2xl ${loading ? 'hidden' : ''}`}
-                                            type="submit"
-                                            value={intl.formatMessage({ id: 'create' })}
-                                        />
-                                        {loading && (
-                                            <div><Loading sm /></div>
-                                        )}
+                                        <Button isLoading={handleRegister.isLoading} type={"submit"} bg={"bg-red-500 text-white"}><FormattedMessage id='create' /></Button>
                                         <Link to={"/login"}><FormattedMessage id='login' /></Link>
                                     </div>
 

@@ -17,6 +17,14 @@ import React from 'react';
 import { Profile } from "../pages/Profile/Profile";
 import { EditProfile } from "../features/pages/Profile/EditProfile/EditProfile";
 import { ReservationsHistory } from "../features/pages/Profile/ReservationsHistory/ReservationsHistory";
+import { ProtectedRouteOrView } from "../components/ProtectedRouteOrView/ProtectedRouteOrView";
+import { AdsBooking } from "../features/pages/AdsBooking/AdsBooking";
+import { AdsHistory } from "../features/pages/Profile/AdsHistory/AdsHistory";
+import { Lawyers } from "../pages/Lawyers/Lawyers";
+import { LawyerRequiredFiles } from "../pages/LawyerRequiredFiles/LawyerRequiredFiles";
+import { TermsAndCondtions } from "../pages/TermsAndCondtions/TermsAndCondtions";
+import { Messages } from "../pages/Messages/Messages";
+import { LawyerMessages } from "../pages/LawyerMessages/LawyerMessages";
 
 const router = createBrowserRouter([
     {
@@ -53,6 +61,18 @@ const router = createBrowserRouter([
                 element: <SingleCategory />
             },
             {
+                path: "/lawyers",
+                element: <Lawyers />
+            },
+            {
+                path: "/lawyer-required-files",
+                element: <LawyerRequiredFiles />
+            },
+            {
+                path: "/terms-and-condtions",
+                element: <TermsAndCondtions />
+            },
+            {
                 path: "/lawyer/:lawyerId",
                 element: <SingleLawyer />
             },
@@ -70,7 +90,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "/profile",
-                element: <Profile />,
+                element: <ProtectedRouteOrView auth>
+                    <Profile />
+                </ProtectedRouteOrView>,
                 children: [
                     {
                         path: "edit-profile",
@@ -80,11 +102,27 @@ const router = createBrowserRouter([
                         path: "reservations-history",
                         element: <ReservationsHistory />
                     },
+                    {
+                        path: "Ads-history",
+                        element: <AdsHistory />
+                    },
+                    {
+                        path: "messages",
+                        element: <Messages />
+                    },
+                    {
+                        path: "lawyer-messages",
+                        element: <LawyerMessages />
+                    },
                 ],
             },
             {
                 path: "/booking",
                 element: <Booking />
+            },
+            {
+                path: "/ads_booking",
+                element: <AdsBooking />
             },
         ]
     }

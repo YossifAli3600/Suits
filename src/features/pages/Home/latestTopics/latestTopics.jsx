@@ -13,11 +13,11 @@ export const LatestTopics = () => {
     if (isLoading) {
         content = <Loading />
     } else if (!blogs || !blogs.length) {
-        content = <FormattedMessage id='noBlogs' />
+        content = <span className='text-2xl dark:text-white'><FormattedMessage id='noBlogs' /></span>
     } else {
         content =
             <>
-                <div className={`grid grid-cols-1 md:grid-cols-3 gap-5 w-fit m-auto`}>
+                <div className={`grid grid-cols-1 md:grid-cols-3 gap-5 w-full m-auto`}>
                     {blogs.slice(0, 6).map((blog) => {
                         return (
                             <BlogCard key={blog.id} blog={blog} />

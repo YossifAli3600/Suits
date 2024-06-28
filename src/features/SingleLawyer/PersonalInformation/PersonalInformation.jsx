@@ -11,7 +11,7 @@ export const PersonalInformation = ({ LawyerData }) => {
     return (
         <Fragment>
             <LawyerInformation LawyerData={LawyerData} />
-            <BriefInformation />
+            <BriefInformation LawyerData={LawyerData} />
             {authData && <ReviewForm />}
             <CustomersRating reviews={LawyerData.reviews} />
         </Fragment>

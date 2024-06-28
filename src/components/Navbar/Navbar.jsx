@@ -13,7 +13,7 @@ export const Navbar = () => {
     const userDropDown = useStore((state) => state.userDropDown);
     const setUserDropDown = useStore((state) => state.setUserDropDown);
     const navbarOpened = useStore((state) => state.navBarOpened);
-    console.log(authData)
+    const setNavBarOpened = useStore((state) => state.setNavBarOpened);
     const handleUserTabs = () => {
         setUserDropDown(!userDropDown)
     }
@@ -22,7 +22,11 @@ export const Navbar = () => {
         if (!e.target.closest(".UserIcon")) {
             closeSideBarOnClick();
         }
+        if (!e.target.closest(".links") && !e.target.closest(".smNav")) {
+            setNavBarOpened(false);
+        }
     }
+
     function closeSideBarOnClick() {
         setUserDropDown(false)
     }
@@ -31,10 +35,10 @@ export const Navbar = () => {
         document.addEventListener("click", closeSideBar);
     }, []);
     return (
-        <div className='w-full z-50 shadow-md'>
+        <div className='w-full z-50 shadow-mdn'>
             <div className='flex items-center justify-between p-5 bg-white dark:bg-gray-800 relative'>
-                <LogoComponent />
-                <div className={`${styles.links} bg-white dark:bg-slate-700 md:bg-white md:dark:bg-transparent  ${navbarOpened ? "right-0" : "right-[-100%] md:right-0"} `}>
+                <LogoComponent bg={"bg-black/80 dark:bg-transparent rounded-full"} />
+                <div className={`${styles.links} links bg-white dark:bg-slate-700 md:bg-white md:dark:bg-transparent  ${navbarOpened ? "right-0" : "right-[-100%] md:right-0"} `}>
                     <NavLinks />
                 </div>
                 <div className="flex items-center gap-3">

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useParams } from 'react-router'
 import Loading from '../../components/Loading/Loading';
 import { LawyerCard } from '../../components/LawyerCard/LawyerCard';

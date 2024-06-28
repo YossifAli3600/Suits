@@ -8,6 +8,7 @@ import { FormattedMessage } from 'react-intl'
 import { useBlogsData, useTopLawyersData } from '../../queries/queries'
 import Loading from '../../components/Loading/Loading'
 import { TopLawyers } from '../../features/pages/Topics/TopLawyers'
+import { AdsLawyers } from '../../features/pages/Topics/AdsLawyers'
 
 export const Topics = () => {
     const { data: blogs, isLoading } = useBlogsData();
@@ -16,7 +17,7 @@ export const Topics = () => {
     if (isLoading) {
         content = <Loading />
     } else if (!blogs || !blogs.length) {
-        content = <FormattedMessage id='noBlogs' />
+        content = <span className='text-2xl dark:text-white'><FormattedMessage id='noBlogs' /></span>
     } else {
         content =
             <div className='flex flex-col gap-5 px-5 mt-20 mb-16'>
@@ -129,25 +130,13 @@ export const Topics = () => {
         <Page>
             <div className='grid grid-cols-1 md:grid-cols-12 gap-1 mt-16'>
                 <div className='col-span-3 px-4 '>
-                    <div className='w-full md:sticky md:top-11  md:h-[100vh]'>
-                        <h3 className='text-2xl dark:text-white'><FormattedMessage id='latestLawyers' /></h3>
-                        <Slider
-                            style={"md:h-[70%]"}
-                            slidesPerView={1}
-                        >
-                            {lawyers.map((lawyer) => {
-                                return (
-                                    <SwiperSlide key={lawyer.id}><LawyerCard className={"bg-[#8ECAE1] h-full p-8 md:px-5"} key={lawyer.id} lawyer={lawyer} /></SwiperSlide>
-                                );
-                            })}
-                        </Slider>
-                    </div>
+                    <TopLawyers />
                 </div>
                 <div className="col-span-6">
                     {content}
                 </div>
                 <div className='col-span-3 px-4'>
-                    <TopLawyers />
+                    <AdsLawyers />
                 </div>
             </div>
 

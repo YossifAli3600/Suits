@@ -14,6 +14,6 @@
 .features_item > div:nth-child(1):hover{
   box-shadow: var(--shadow);
   color: white;
-  background-color: var(--primary);
+  background-color: #0f2a47;
   transform: scale(1.05);
 }

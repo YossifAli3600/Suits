@@ -13,6 +13,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { loginSchema } from '../../schemas/loginSchema';
 import { TextInput } from '../../components/Inputs/TextInput/TextInput';
 import { MdOutlineMailOutline, MdOutlineLock } from "react-icons/md";
+import Button from '../../components/Button/Button';
 
 export const Login = () => {
     const axios = useAxios();
@@ -78,7 +79,7 @@ export const Login = () => {
                                                     required
                                                 />
                                             </div>
-
+                                            
                                             <div className="flex items-center justify-center mb-3">
                                                 <TextInput
                                                     label={<FormattedMessage id="password" />}
@@ -94,14 +95,7 @@ export const Login = () => {
                                             </div>
 
                                             <div className='flex items-center justify-between'>
-                                                <input
-                                                    className={`bg-red-500 text-white cursor-pointer p-2 px-5 rounded-2xl ${loading ? 'hidden' : ''}`}
-                                                    type="submit"
-                                                    value={intl.formatMessage({ id: 'login' })}
-                                                />
-                                                {loading && (
-                                                    <div><Loading sm /></div>
-                                                )}
+                                                <Button isLoading={handleLogin.isLoading} type={"submit"} bg={"bg-red-500 text-white"}><FormattedMessage id='login' /></Button>
                                                 <Link to={"/Register"}><FormattedMessage id='createAccount' /></Link>
                                             </div>
                                         </form>

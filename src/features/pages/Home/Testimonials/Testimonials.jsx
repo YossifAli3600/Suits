@@ -1,13 +1,8 @@
-import React, { Fragment } from 'react'
-import styles from './Testimonials.module.css'
 import { SwiperSlide } from 'swiper/react'
 import { SectionLayout } from '../../../../components/SectionLayout/SectionLayout';
 import { FormattedMessage } from 'react-intl';
 import { Slider } from '../../../../components/Slider/Slider';
 import { TestimonalCard } from '../TestimonalCard/TestimonalCard';
-
-{/* <FaQuoteLeft />
-<FaQuoteRight /> */}
 
 export const Testimonials = () => {
     const DummyTestimonials = [
@@ -36,7 +31,6 @@ export const Testimonials = () => {
             content: "Impressive service. Will definitely use again."
         },
     ];
-
     return (
         <SectionLayout title={<FormattedMessage id='testimonials' />}>
             <Slider

@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl'
 
 export const Footer = () => {
     return (
-        <div className='bg-[#219EBC]'>
+        <div className='bg-[#0f2a47] text-white'>
             <div className='flex flex-col md:flex-row gap-5 md:gap-0 justify-between custom_container my-0 py-11'>
                 <div className='text-4xl'>
                     <LogoComponent />

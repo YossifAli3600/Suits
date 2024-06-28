@@ -154,4 +154,85 @@ export const english = {
 		"Contact the lawyer through an online meeting and your legal advice will be answered.",
 	chatIntro:
 		"Contact the lawyer through an Chat and your legal advice will be answered",
+	AdsHistory: "Advertising History",
+	week: "Week",
+	Month: "Month",
+	duration: "Duration",
+	durationReq: "Duration is Required",
+	advertisingRequest: "Advertising Request",
+	egp: "Egp",
+	price: "Price",
+	commentReq: "Comment is Required",
+	reviews: "Reviews",
+	newAd: "New Advertise ?",
+	pay: "Pay",
+	dateReq: "Date Is Required",
+	upload: "Upload",
+	ReqFiles: "Required Files",
+	readMore: "Read More",
+	comment: "Comment",
+	dateInfo:
+		"NB: If the date is not suitable for the lawyer ,  we will contact you to reschadule the date",
+	topLawyers: "Top Rated Lawyers",
+	allLawyers: "All Lawyers",
+	noLawyers: "No Lawyers",
+	lawyerNumber: "Lawyers Count",
+	resetFilter: "Reset Filter",
+	filter: "Filter	",
+	select: "Select",
+	reqItem1: "National ID or Passport",
+	reqItem2: "Academic Certificates",
+	reqItem3: "Bar Association Membership Certificate",
+	reqItem4: "Work Experience Certificates",
+	reqItem5: "Professional License",
+	reqItem6: "Additional Certificates",
+	termItem1: "User Accounts",
+	termItemInfo1:
+		"Users must provide accurate and complete information when creating an account. \
+	  Users are responsible for maintaining the confidentiality of their login credentials.",
+
+	termItem2: "Services Provided",
+	termItemInfo2:
+		"Our platform connects clients with lawyers and facilitates legal consultations, \
+	  document exchange, and case management. We do not provide legal advice or representation.",
+
+	termItem3: "User Conduct",
+	termItemInfo3:
+		"Users must use the platform lawfully and respectfully. \
+	  Any misuse, abusive behavior, or illegal activity will result in account suspension or termination.",
+
+	termItem4: "Confidentiality",
+	termItemInfo4:
+		"All communications and documents exchanged on the platform are confidential. \
+	  Users agree to maintain the confidentiality of all information obtained through the platform.",
+
+	termItem5: "Fees and Payments",
+	termItemInfo5:
+		"Clients agree to pay for services as per the fee structure provided by the lawyers. \
+	  All payments must be made through the secure payment system integrated into the platform.",
+
+	termItem6: "Limitation of Liability",
+	termItemInfo6:
+		"The platform is not liable for any indirect, incidental, or consequential damages arising from the use of the services. \
+	  We do not guarantee the accuracy, reliability, or completeness of any information provided by users.",
+
+	termItem7: "Termination",
+	termItemInfo7:
+		"We reserve the right to terminate or suspend access to the platform for any user who violates these terms and conditions.",
+
+	termItem8: "Governing Law",
+	termItemInfo8:
+		"These terms and conditions are governed by the laws of Egypt.",
+
+	termItem9: "Changes to Terms",
+	termItemInfo9:
+		"We reserve the right to modify these terms and conditions at any time. \
+	  Users will be notified of any changes through the platform.",
+	noDescription: "No Description",
+	messages: "Messages",
+	newMsgFrom: "Message From",
+	msgContent: "Message Content",
+	mainMsg: "Main Message",
+	startChatWithYourLawyers: "Start Chat With Your Lawyers",
+	replyToCustomer: "Reply To Customer",
 };

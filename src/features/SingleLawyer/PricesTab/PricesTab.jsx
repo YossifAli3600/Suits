@@ -14,7 +14,7 @@ export const PricesTab = ({ lawyer }) => {
         {
             id: "2",
             title: <FormattedMessage id='chat' />,
-            intro: "خدمة التمثيل النظامي للأفراد والشركات والمؤسسات، بشكل دائم أو مؤقت .",
+            intro: <FormattedMessage id='chatIntro' />,
             price: lawyer.chat_price,
         },
     ]

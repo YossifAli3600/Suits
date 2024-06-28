@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { useLocation, useParams } from 'react-router';
+import { useLocation, useNavigate, useParams } from 'react-router';
 import { Page } from '../../../components/Page/Page';
 import SelectField from '../../../components/Inputs/SelectField';
 import { useTopLawyersData } from '../../../queries/queries';
@@ -13,6 +13,8 @@ import useAxios from '../../../hooks/useAxios';
 import { useMutation } from 'react-query';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
+import { BookingSchema } from '../../../schemas/BookingSchema';
+import { Error } from '../../../components/Error/Error';
 
 export const Booking = () => {
     const location = useLocation();
@@ -27,6 +29,7 @@ export const Booking = () => {
     }, [location.search]);
 
     const intl = useIntl();
+    let navigate = useNavigate();
     const { data: lawyers } = useTopLawyersData();
     const { handleMutationErr, formErr } = useFormErr();
     const lawyersOptions = useSelectOptions({ data: lawyers, valueKey: 'id', labelKey: 'name' });
@@ -37,31 +40,33 @@ export const Booking = () => {
 
     const form = useRef();
     const axios = useAxios();
-    const handleContact = useMutation({
-        mutationFn: contactApi,
+    const handleBooking = useMutation({
+        mutationFn: paymentApi,
         onSuccess: (data) => {
+            window.open(data.data.data.pay_link, '_blank');
             toast.success(data.data.message);
-            form.current.resetForm();
+            navigate("/profile/reservations-history")
         },
         onError: (err) => {
             handleMutationErr(err);
         },
     });
 
-    function contactApi(data) {
+    function paymentApi(data) {
         return axios.post("pay/paymob", data);
     }
 
     return (
         <Page style={"custom_container"}>
             <Formik
+                validationSchema={BookingSchema}
                 initialValues={{
                     lawyer_id: Number(lawyerId),
                     service: Number(serviceId),
                     metting_date: '',
                 }}
                 enableReinitialize
-                onSubmit={(values) => handleContact.mutate(values)}
+                onSubmit={(values) => handleBooking.mutate(values)}
             >
                 {({ setFieldValue }) => (
                     <Form>
@@ -95,7 +100,9 @@ export const Booking = () => {
                             type="datetime"
                             label={<FormattedMessage id="date" />}
                         />
-                        <Button className={"w-full"} type="submit" >Pay</Button>
+                        <span className='text-red-500'><FormattedMessage id='dateInfo' /></span>
+                        <Error className={"mb-3"}><span><ErrorMessage name='metting_date' /></span></Error>
+                        <Button isLoading={handleBooking.isLoading} className={"w-full"} type="submit" ><FormattedMessage id='pay' /></Button>
                     </Form>
                 )}
             </Formik>

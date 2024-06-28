@@ -37,7 +37,7 @@ export const NavSettings = () => {
         <Fragment>
             <span className='cursor-pointer dark:text-white' onClick={handleMode}>{theme == "dark" ? <MdOutlineLightMode size={20} /> : <MdOutlineDarkMode size={20} />}</span>
             <span className='cursor-pointer dark:text-white' onClick={handleLang} ><IoLanguageSharp size={20} /></span>
-            <span className='cursor-pointer dark:text-white md:hidden' onClick={() => setNavbarOpened(!navbarOpened)} ><FaBars size={20} /></span>
+            <span className='cursor-pointer dark:text-white md:hidden smNav' onClick={() => setNavbarOpened(!navbarOpened)} ><FaBars size={20} /></span>
         </Fragment>
     )
 }

@@ -14,6 +14,7 @@ import useAxios from '../../../../hooks/useAxios';
 import { useMutation } from 'react-query';
 import { useStore } from '../../../../zustand/store';
 import PicInput from '../../../../components/PicInput/PicInput';
+import Button from '../../../../components/Button/Button';
 
 export const EditProfile = () => {
     const authData = useStore((state) => state.authData);
@@ -67,7 +68,7 @@ export const EditProfile = () => {
                 }}
             >
                 {({ values, setFieldValue, errors }) => (
-                    <Form>
+                    <Form className='mx-8 md:mx-0'>
                         <h1 className='text-center text-2xl'><FormattedMessage id='editProfile' /></h1>
                         {authData.type == "Lawyer" &&
                             <PicInput
@@ -83,7 +84,7 @@ export const EditProfile = () => {
                         <div className="flex items-center justify-center mb-3">
                             <TextInput
                                 label={<FormattedMessage id="name" />}
-                                icon={<span className='text-red-500 dark:text-white'><MdOutlineContactMail size={25} /></span>}
+                                icon={<span className='text-sky-400 dark:text-white'><MdOutlineContactMail size={25} /></span>}
                                 placeholder={intl.formatMessage({ id: "name" })}
                                 type="text"
                                 id="register-name"
@@ -98,7 +99,7 @@ export const EditProfile = () => {
                             <div className="flex items-center justify-center mb-3">
                                 <TextInput
                                     label={<FormattedMessage id="description" />}
-                                    icon={<span className='text-red-500 dark:text-white'><MdOutlineContactMail size={25} /></span>}
+                                    icon={<span className='text-sky-400 dark:text-white'><MdOutlineContactMail size={25} /></span>}
                                     placeholder={intl.formatMessage({ id: "description" })}
                                     type="text"
                                     id="profile-description"
@@ -114,7 +115,7 @@ export const EditProfile = () => {
                         <div className="flex items-center justify-center mb-3">
                             <TextInput
                                 label={<FormattedMessage id="email" />}
-                                icon={<span className='text-red-500 dark:text-white'><MdOutlineMailOutline size={25} /></span>}
+                                icon={<span className='text-sky-400 dark:text-white'><MdOutlineMailOutline size={25} /></span>}
                                 placeholder={intl.formatMessage({ id: "email" })}
                                 type="text"
                                 id="register-email"
@@ -129,7 +130,7 @@ export const EditProfile = () => {
                         <div className="flex items-center justify-center mb-3">
                             <TextInput
                                 label={<FormattedMessage id="phone" />}
-                                icon={<span className='text-red-500 dark:text-white'><FaPhoneAlt size={20} /></span>}
+                                icon={<span className='text-sky-400 dark:text-white'><FaPhoneAlt size={20} /></span>}
                                 placeholder={intl.formatMessage({ id: "phone" })}
                                 type="text"
                                 id="register-phone"
@@ -144,7 +145,7 @@ export const EditProfile = () => {
                         <div className="flex items-center justify-center mb-3">
                             <TextInput
                                 label={<FormattedMessage id="address" />}
-                                icon={<span className='text-red-500 dark:text-white'><FaAddressCard size={25} /></span>}
+                                icon={<span className='text-sky-400 dark:text-white'><FaAddressCard size={25} /></span>}
                                 placeholder={intl.formatMessage({ id: "address" })}
                                 type="text"
                                 id="register-address"
@@ -155,11 +156,7 @@ export const EditProfile = () => {
                                 required
                             />
                         </div>
-                        <input
-                            className={`bg-red-500 text-white cursor-pointer w-full p-2 px-5 rounded-xl`}
-                            type="submit"
-                            value={intl.formatMessage({ id: 'update' })}
-                        />
+                        <Button isLoading={handleEditProfile.isLoading} type={"submit"} className={"w-full"}><FormattedMessage id='update' /></Button>
                     </Form>
                 )}
             </Formik>
