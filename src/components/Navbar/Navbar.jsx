@@ -8,7 +8,7 @@ import { UnAuthDropDown } from '../../features/components/Navbar/UnAuthDropDown/
 import { NavSettings } from '../../features/components/Navbar/NavSettings/NavSettings';
 import { NavLinks } from '../../features/components/Navbar/NavLinks/NavLinks';
 export const Navbar = () => {
-
+    const lang = localStorage.getItem("lang") || "ltr";
     const authData = useStore((state) => state.authData);
     const userDropDown = useStore((state) => state.userDropDown);
     const setUserDropDown = useStore((state) => state.setUserDropDown);
@@ -44,7 +44,7 @@ export const Navbar = () => {
                 <div className="flex items-center gap-3">
                     <div className='relative UserIcon'>
                         <span onClick={handleUserTabs} className='cursor-pointer dark:text-white'><CgProfile size={20} /></span>
-                        <div className={`${userDropDown ? "block" : "hidden"} ${styles.userDropDown} bg-white dark:bg-slate-500 dark:border-slate-400 `}>
+                        <div className={`${userDropDown ? "block" : "hidden"} ${styles.userDropDown} bg-white dark:bg-slate-500 dark:border-slate-400 ${lang == 'ltr' ? '-left-24' : ""}`}>
                             {authData ?
                                 <AuthUserDropDown />
                                 :

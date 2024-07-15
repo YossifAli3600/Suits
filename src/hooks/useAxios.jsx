@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useStore } from "../zustand/store";
 
-const API_LINK = "http://127.0.0.1:8000/api"; //local
-// const API_LINK = "https://suits.mrehabazmy.com/api"; //Live
+// const API_LINK = "http://127.0.0.1:8000/api"; //local
+const API_LINK = "https://suits.mrehabazmy.com/api"; //Live
 const lang = localStorage.getItem("lang") || "ltr";
 
 export default function useAxios() {

@@ -12,7 +12,6 @@ const store = (set) => ({
 	userDropDown: false,
 	setUserDropDown: (value) => set(() => ({ userDropDown: value })),
 	editLang: (value) => {
-		console.log("first");
 		set(() => ({
 			lang: value,
 		}));
